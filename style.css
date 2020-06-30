@@ -1,3 +1,20 @@
 body {
-    
-};
+   background-color: #8FC1E3;
+}
+
+header {
+    background-color: #5085A5;
+    text-align: center;
+    color: #F7F9FB;
+    padding: 5%;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-family: 'Permanent Marker', cursive;
+}
+
+.info {
+    background-color: #3170BE;
+}
+
