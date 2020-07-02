@@ -24,11 +24,72 @@
     </header>
     <div class="container">
       <div class="row">
-        <div class="col-md-5 info">
-          <p>form will go here!</p>
+        <div class="col-md-4 cities">
+          <h3>
+            Search for a City:
+          </h3>
+          <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="ex: New York City" aria-label="Search">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+          </form>
+          <br>
+          <div id="pastCity">
+            <p>hello</p>
+            <p>hello</p>
+            <p>hello</p>
+            <p>hello</p>
+            <p>hello</p>
+          </div>
         </div>  
-        <div class="col-md-7 info">
-          <p>displays will go here!</p>
+        <div class="col-md-8 info">
+          <div id="selected-city">
+            <h4>
+              Selected City
+            </h4>
+            <p>Current Temperature: </p>
+            <p>Humidity: </p>
+            <p>Wind Speed: </p>
+            <p>UV Index: </p>
+          </div>
+          <div id="forecast">
+            <h3>
+              5-Day Forecast:
+            </h3>
+            <div id="five-day">
+              <div class="row">
+                <div class="col-xs-2 five-day">
+                  <h6>Day +1 Here</h6>
+                <p>Conditions</p>
+                <p>Temp: 78</p>
+                <p>Humidity: 22%</p>
+                </div>
+                <div class="col-xs-2 five-day">
+                  <h6>Day +2 Here</h6>
+                <p>Conditions</p>
+                <p>Temp: 81</p>
+                <p>Humidity: 18%</p>
+                </div>
+                <div class="col-xs-2 five-day">
+                  <h6>Day +3 Here</h6>
+                <p>Conditions</p>
+                <p>Temp: 77</p>
+                <p>Humidity: 20%</p>
+                </div>
+                <div class="col-xs-2 five-day">
+                  <h6>Day +4 Here</h6>
+                <p>Conditions</p>
+                <p>Temp: 76</p>
+                <p>Humidity: 22%</p>
+                </div>
+                <div class="col-xs-2 five-day">
+                  <h6>Day +5 Here</h6>
+                <p>Conditions</p>
+                <p>Temp: 69</p>
+                <p>Humidity: 36%</p>
+                </div>
+              </div>
+              
+            </div>
         </div>    
       </div>
     </div>

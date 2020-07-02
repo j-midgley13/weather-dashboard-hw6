@@ -10,11 +10,27 @@ header {
     margin-bottom: 15px;
 }
 
-h1 {
+h1, h3 {
     font-family: 'Permanent Marker', cursive;
+    color: #F7F9FB;
+}
+
+p, h4, h6 {
+    color: #F7F9FB;
+}
+
+.cities {
+    background-color: #687864;
 }
 
 .info {
     background-color: #3170BE;
+}
+
+.five-day {
+    margin: 5px;
+    padding: 2px;
+    border-style: solid;
+    border-color: #F7F9FB;
 }
 
