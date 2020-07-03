@@ -17,6 +17,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
     <header>
@@ -48,13 +49,11 @@
         </div>  
         <div class="col-md-8 info">
           <div id="selected-city">
-            <h4>
-              Selected City
-            </h4>
-            <p>Current Temperature: </p>
-            <p>Humidity: </p>
-            <p>Wind Speed: </p>
-            <p>UV Index: </p>
+            <h4 id="currentCity"></h4><img id="currentCondition" src="" alt="Current Conditions">
+            <p id="currentTemp">Current Temperature: </p>
+            <p id="currentHumidity">Humidity: </p>
+            <p id="currentWind">Wind Speed: </p>
+            <p id="currentUV">UV Index: </p>
           </div>
           <div id="forecast">
             <h3>
@@ -63,34 +62,34 @@
             <div id="five-day">
               <div class="row">
                 <div class="col-xs-2 five-day">
-                  <h6>Day +1 Here</h6>
-                <p>Conditions</p>
-                <p>Temp: 78</p>
-                <p>Humidity: 22%</p>
+                  <h6>Date +1</h6>
+                  <p>Conditions</p>
+                  <p>Temp: </p>
+                  <p>Humidity: </p>
                 </div>
                 <div class="col-xs-2 five-day">
-                  <h6>Day +2 Here</h6>
-                <p>Conditions</p>
-                <p>Temp: 81</p>
-                <p>Humidity: 18%</p>
+                  <h6>Date +2</h6>
+                  <p>Conditions</p>
+                  <p>Temp: </p>
+                  <p>Humidity: </p>
                 </div>
                 <div class="col-xs-2 five-day">
-                  <h6>Day +3 Here</h6>
-                <p>Conditions</p>
-                <p>Temp: 77</p>
-                <p>Humidity: 20%</p>
+                  <h6>Date +3</h6>
+                  <p>Conditions</p>
+                  <p>Temp: </p>
+                  <p>Humidity: </p>
                 </div>
                 <div class="col-xs-2 five-day">
-                  <h6>Day +4 Here</h6>
-                <p>Conditions</p>
-                <p>Temp: 76</p>
-                <p>Humidity: 22%</p>
+                  <h6>Date +4</h6>
+                  <p>Conditions</p>
+                  <p>Temp: </p>
+                  <p>Humidity: </p>
                 </div>
                 <div class="col-xs-2 five-day">
-                  <h6>Day +5 Here</h6>
-                <p>Conditions</p>
-                <p>Temp: 69</p>
-                <p>Humidity: 36%</p>
+                  <h6>Date +5</h6>
+                  <p>Conditions</p>
+                  <p>Temp: </p>
+                  <p>Humidity: </p>
                 </div>
               </div>
               
