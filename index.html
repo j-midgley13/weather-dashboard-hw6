@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Icon Image for page -->
+    <link rel="icon" href="assets/signpost.png" type="image">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Link to css file -->
@@ -30,12 +32,12 @@
     </header>
     <div class="container">
       <div class="row">
-        <div class="col-md-4 cities">
-          <h3>
+        <div class="col-md-3 cities">
+          <h4>
             Search for a City:
-          </h3>
+          </h4>
           <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="ex: New York City" aria-label="Search">
+            <input class="form-control mr-sm-2" type="search" placeholder="ex: London" aria-label="Search">
             <button id="submitBtn" class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
           </form>
           <br>
@@ -47,25 +49,25 @@
             <p>hello</p>
           </div>
         </div>  
-        <div class="col-md-8 info">
+        <div class="col-md-9 info">
           <div id="selected-city">
-            <h4 id="currentCity"></h4><img id="currentCondition" src="" alt="Current Conditions">
+            <h4 id="currentCity">Select a City!</h4><img id="currentCondition" src="" alt="">
             <p id="currentTemp">Current Temperature: </p>
             <p id="currentHumidity">Humidity: </p>
             <p id="currentWind">Wind Speed: </p>
             <p id="currentUV">UV Index: </p>
           </div>
-          <div id="forecast">
+          <div id="future">
             <h3>
               5-Day Forecast:
             </h3>
-            <div id="five-day">
-              <div class="row">
-                <div class="col-xs-2 five-day">
-                  <h6>Date +1</h6>
-                  <p>Conditions</p>
-                  <p>Temp: </p>
-                  <p>Humidity: </p>
+            <div>
+              <div class="row" id="forecast">
+                <div class="col-xs-2 five-day dayOne">
+                  <h6 id="nextDay">Date +1</h6>
+                  <img id="nextDayC" src="" alt="">
+                  <p id="nextDayT">Temp: </p>
+                  <p id="nextDayH">Humidity: </p>
                 </div>
                 <div class="col-xs-2 five-day">
                   <h6>Date +2</h6>
