@@ -11,8 +11,17 @@ function WeatherDashboard() {
         $("#submitBtn").on("click", function (event) {
             event.preventDefault();
             console.log("submit button correctly submit");
-            var searchCity = $(this).siblings("input").val().toString().trim();
-            
+            var searchCity = $(this).siblings("input").val().trim();
+            localStorage.setItem("City Search", JSON.stringify(searchCity));
+            console.log(searchCity);
+            selectedCity(searchCity);
+        });
+
+        $("#cityIdea button").on("click", function (event) {
+            event.preventDefault();
+
+            var searchCity = $(this).html().toString();
+            localStorage.setItem("City Search", JSON.stringify(searchCity));
             console.log(searchCity);
             selectedCity(searchCity);
         });
@@ -20,7 +29,9 @@ function WeatherDashboard() {
     });
 };
 
+// Starts function to fill in information for selected city
 function selectedCity(searchCity) {
+
     var APIKey = "46bc2c42a8260a4e45e15ae9d7661e9b"
     var queryURL = "http://api.openweathermap.org/data/2.5/forecast?" + "&q=" + searchCity + "&appid=" + APIKey;
     console.log(queryURL);
@@ -30,6 +41,9 @@ function selectedCity(searchCity) {
     })
         .then(function (response) {
             console.log(response);
+
+            var cityLon = response.city.coord.lon;
+            var cityLat = response.city.coord.lat;
 
             //logs current day weather conditions
             var currentCity = response.city.name;
@@ -54,19 +68,6 @@ function selectedCity(searchCity) {
             $("#currentHumidity").text("Humidity: " + currentHumidity + "%");
             $("#currentWind").text("Wind Speed: " + currentWind);
 
-            // var date2 = moment().add(1, 'd').format("MM/DD/YYYY")
-            // console.log(date2);
-            // var conditions2 = response.list[1].weather[0].icon;
-            // console.log(conditions2);
-            // var icon2 = "http://openweathermap.org/img/w/" + conditions2 + ".png";
-            // var temp2 = (((response.list[1].main.temp) - 273.15) * 1.80 + 32).toFixed(1);
-            // var humidity2 = response.list[1].main.humidity;
-
-            // $("#nextDay").text(date2);
-            // $("#nextDayC").attr("src", icon2);
-            // $("#nextDayT").text("Temp: " + temp2);
-            // $("#nextDayH").text("Humidity: " + humidity2);
-
             //Yakini from my group gave me great inspiration and code for this for loop!
             $("#forecast").empty();
 
@@ -81,14 +82,41 @@ function selectedCity(searchCity) {
                         `<p>Temp: ${((response.list[i].main.temp - 273.15) * 1.80 + 32).toFixed(1)}&nbsp;°F</p>` +
                         `<p>Humidity: ${response.list[i].main.humidity}%</p>` +
                         '</div>'
-                        );
+                    );
                 };
 
                 $("#forecast").append(forecast5day(i));
             };
 
+            $("#currentUV").empty();
+
+            var query2URL = "http://api.openweathermap.org/data/2.5/uvi?&appid=" + APIKey + "&lat=" + cityLat + "&lon=" + cityLon;
+
+            // Gets UV index and background color for severity
+            $.ajax({
+                url: query2URL,
+                method: "GET"
+            })
+                .then(function (response) {
+                    console.log(response);
+                    var currentUV = response.value;
+                    console.log(currentUV);
+                    if (currentUV < 3) {
+                        var backgroundUV = $("<span>").attr("style", "background-color: green").text(currentUV);
+                    } else if (currentUV >= 3 && currentUV < 5) {
+                        var backgroundUV = $("<span>").attr("style", "background-color: yellow").text(currentUV);
+                    } else if (currentUV >= 5 && currentUV < 8) {
+                        var backgroundUV = $("<span>").attr("style", "background-color: orange").text(currentUV);
+                    } else if (currentUV >= 8) {
+                        var backgroundUV = $("<span>").attr("style", "background-color: red").text(currentUV);
+                    }
+                    $("#currentUV").text("UV Index: ").append(backgroundUV);
+                });
+
 
         });
+
+
 
 }
 

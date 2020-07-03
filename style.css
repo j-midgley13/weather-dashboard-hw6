@@ -10,6 +10,14 @@ header {
     margin-bottom: 15px;
 }
 
+button {
+    display: block;
+}
+
+#cityIdea {
+    text-align: center;
+}
+
 h1, h3, h4 {
     font-family: 'Permanent Marker', cursive;
     color: #F7F9FB;
