@@ -33,7 +33,7 @@ function WeatherDashboard() {
 function selectedCity(searchCity) {
 
     var APIKey = "46bc2c42a8260a4e45e15ae9d7661e9b"
-    var queryURL = "http://api.openweathermap.org/data/2.5/forecast?" + "&q=" + searchCity + "&appid=" + APIKey;
+    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?" + "&q=" + searchCity + "&appid=" + APIKey;
     console.log(queryURL);
     $.ajax({
         url: queryURL,
@@ -51,7 +51,7 @@ function selectedCity(searchCity) {
 
             var currentCondition = response.list[0].weather[0].icon;
             console.log(currentCondition);
-            var iconImg = "http://openweathermap.org/img/w/" + currentCondition + ".png";
+            var iconImg = "https://openweathermap.org/img/w/" + currentCondition + ".png";
 
             var currentTemp = response.list[0].main.temp;
             var tempF = ((currentTemp - 273.15) * 1.80 + 32);
@@ -90,7 +90,7 @@ function selectedCity(searchCity) {
 
             $("#currentUV").empty();
 
-            var query2URL = "http://api.openweathermap.org/data/2.5/uvi?&appid=" + APIKey + "&lat=" + cityLat + "&lon=" + cityLon;
+            var query2URL = "https://api.openweathermap.org/data/2.5/uvi?&appid=" + APIKey + "&lat=" + cityLat + "&lon=" + cityLon;
 
             // Gets UV index and background color for severity
             $.ajax({
